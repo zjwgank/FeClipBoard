@@ -34,6 +34,9 @@ export default class Layout extends Vue {
   }, {
     name: 'exec-command',
     route: '/exec-command'
+  }, {
+    name: 'js-clipboard',
+    route: '/js-clipboard'
   }]
 }
 </script>

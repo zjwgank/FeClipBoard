@@ -1,5 +1,7 @@
 import Layout from '@/layout/index.vue'
 const NavigatorClipboard = () => import('@/views/navigator-clipboard/index.vue')
+const ExecCommand = () => import('@/views/exec-command/index.vue')
+const JSClipboard = () => import('@/views/js-clipboard/index.vue')
 
 export default [{
   path: '/',
@@ -11,6 +13,14 @@ export default [{
       path: 'navigator-clipboard',
       name: 'clipboard',
       component: NavigatorClipboard
+    }, {
+      path: 'exex-command',
+      name: 'command',
+      component: ExecCommand
+    }, {
+      path: 'js-clipboard',
+      name: 'clipboardjs',
+      component: JSClipboard
     }
   ]
 }
