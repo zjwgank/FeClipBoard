@@ -14,7 +14,7 @@ export default [{
       name: 'clipboard',
       component: NavigatorClipboard
     }, {
-      path: 'exex-command',
+      path: 'exec-command',
       name: 'command',
       component: ExecCommand
     }, {
