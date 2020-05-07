@@ -21,7 +21,7 @@
       header="图片复制"
       class="exec-command-card"
     >
-      <img :src="img" />
+      <div id="img"> <img :src="img" /></div>
       <el-button
         class="exec-command-card-btn"
         size="small"
@@ -54,7 +54,15 @@ export default class ExecCommand extends Vue {
   }
 
   handleCopyImg () {
-    console.log('-------')
+    const strNode = document.getElementById('img') || document.createElement('div')
+    const selection: Selection = window.getSelection() || new Selection()
+    const range = document.createRange()
+    console.log(strNode, '------')
+    range.selectNodeContents(strNode)
+    selection.removeAllRanges()
+    selection.addRange(range)
+    document.execCommand('copy')
+    console.log('------复制完成')
   }
 }
 </script>
