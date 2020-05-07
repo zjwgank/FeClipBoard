@@ -63,17 +63,17 @@ export default class NavigatorClipboard extends Vue {
   }
 
   handleBlob () {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const { img } = this
       const canvas = document.createElement('canvas')
       canvas.width = 300
       canvas.height = 300
-      const ctx: any = canvas.getContext('2d')
+      const ctx = canvas.getContext('2d')
       const Img = new Image()
       Img.setAttribute('crossOrigin', 'anymous')
       Img.src = img
       Img.onload = () => {
-        ctx.drawImage(Img, 0, 0, 300, 300)
+        (ctx as any).drawImage(Img, 0, 0, 300, 300)
         canvas.toBlob((blob) => {
           console.log(blob)
           resolve(blob)
